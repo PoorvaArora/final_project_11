@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/client_info.css">
+    <link rel="stylesheet" href="../css/kpi.css">
     <link rel="stylesheet" href="../css/common.css">
 
 
@@ -27,38 +27,20 @@
               <a href="client_info.html" class="btn btn-default" style="color:#cdecd3;">Client</a>
             </li>
             <li class="nav-item">
-              <a href="site_turbine_info.html" class="btn btn-default active-link">Site/Turbine <span class="sr-only">(current)</span></a>
+              <a href="site_turbine_info.html" class="btn btn-default" style="color:#cdecd3;">Site/Turbine </a>
             </li>
             <li class="nav-item">
-              <a href="kpi.html" class="btn btn-default login" style="color:#cdecd3;">KPI</a>
+              <a href="kpi.html" class="btn btn-default active-link"> <span class="sr-only">(current)</span>KPI</a>
             </li>
           </ul>
         </div>
   </nav>
-<h4 class="travel-header">Site/Turbine Information</h4>
-  <table class="table table-striped travel-table" id="siteTable">
-    <thead class="table-header">
-      <tr>
-        <th scope="col">Site Name</th>
-        <th scope="col">Turbine Name</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Emerald Waters Plant</td>
-        <td>3SA.01</td>
-      </tr>
-      <tr>
-        <td>Smith Energy Complex</td>
-        <td>W7B.01</td>
-      </tr>
-      <tr>
-        <td>King County Farm</td>
-        <td>SF9.06</td>
-      </tr>
-    </tbody>
-  </table>
-
+<h4 class="kpi-header" style="">Key Performance Indicator Dashboard</h4>
+<p class="text">
+  This is a sample just to provide the look and feel of the page. AGS's KPIs will be integrated later upon further clarification from Tommy Edison.
+</p>
+    <iframe src = "https://public.tableau.com/profile/poorva.arora#!/vizhome/team_skills_dashboard/Dashboard1" width = "555" height = "200">
+    </iframe>
 <div>
 
 </div>
@@ -66,15 +48,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-    <script src='../js/tablesort.min.js'></script>
-
-    <!-- Include sort types you need -->
-    <!-- <script src='tablesort.number.js'></script>
-    <script src='tablesort.date.js'></script> -->
-
-    <script>
-      new Tablesort(document.getElementById('travelTable'));
-    </script>
 
   </body>
 </html>

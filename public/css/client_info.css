@@ -1,13 +1,13 @@
-.travel-table{
+.client-table{
   width: 74%;
   margin-left: 14%;
   margin-top: 3%;
 }
-#travel-form {
+#client-form {
   margin: 5% 0 0 27%
 }
 
-.travel-header{
+.client-header{
   margin-left: 45%;
   padding-top: 3%;
   color: darkgreen;
