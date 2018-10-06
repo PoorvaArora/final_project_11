@@ -1,0 +1,13 @@
+iframe {
+  width: 80%;
+  height: 700px;
+  margin-left: 145px;
+}
+
+.kpi-header{
+  margin-left:34%;
+  color: darkgreen;
+}
+.text {
+  margin-left: 2%;
+}
