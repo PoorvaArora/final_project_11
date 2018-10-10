@@ -42,7 +42,7 @@ class Client
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
     // 2. Prepare the query
-    $sql = 'SELECT * FROM Client';
+    $sql = 'SELECT * FROM client';
     $statement = $db->prepare($sql);
 
     // 3. Run the query
