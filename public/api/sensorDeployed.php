@@ -8,10 +8,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 // 1. Go to the database and get all client
-$site = Site::fetchAll();
+$sensorDeployed = SensorDeployed::fetchAll();
 
 // 2. Convert to JSON
-$json = json_encode($site, JSON_PRETTY_PRINT);
+$json = json_encode($client, JSON_PRETTY_PRINT);
 
 // 3. Print
 header('Content-Type: application/json');
