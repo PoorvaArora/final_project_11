@@ -70,8 +70,8 @@ CREATE TABLE sensorDeployed (
   turbineDeployedId INT NOT NULL,
   serialNumber VARCHAR(31) NOT NULL,
   deployedDate DATE NOT NULL,
-  FOREIGN KEY (sensorId) REFERENCES sensor(sensorId),
-  FOREIGN KEY (turbineDeployedId) REFERENCES site(siteId)
+  FOREIGN KEY (sensorId) REFERENCES sensor(sensorId)
+
 );
 
 CREATE TABLE sensorTimeSeries
