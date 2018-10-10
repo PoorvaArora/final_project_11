@@ -42,7 +42,7 @@ class Sensor
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
     // 2. Prepare the query
-    $sql = 'SELECT * FROM Sensor';
+    $sql = 'SELECT * FROM sensor';
     $statement = $db->prepare($sql);
 
     // 3. Run the query
@@ -51,7 +51,7 @@ class Sensor
     // 4. Handle the results
     $arr = [];
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-      $theSensor =  new Client($row);
+      $theSensor =  new Sensor($row);
       array_push($arr, $theSensor);
     }
 
