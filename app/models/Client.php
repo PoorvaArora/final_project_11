@@ -11,7 +11,7 @@ class Client
   public $headquarters;
 
   public function __construct($data) {
-    $this->id = isset($data['clientId']) ? intval($data['clientId']) : null;
+    $this->clientId = isset($data['clientId']) ? intval($data['clientId']) : null;
     $this->clientName = $data['clientName'];
     $this->clientDescription = $data['clientDescription'];
     $this->gicsSector = $data['gicsSector'];
@@ -42,7 +42,7 @@ class Client
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
     // 2. Prepare the query
-    $sql = 'SELECT * FROM Client';
+    $sql = 'SELECT * FROM client';
     $statement = $db->prepare($sql);
 
     // 3. Run the query
