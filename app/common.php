@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'
 require 'models/Client.php';
 require 'models/Sensor.php';
 require 'models/SensorDeployed.php';
-require 'models/sensorTimeSeries.php';
+require 'models/SensorTimeSeries.php';
 require 'models/Site.php';
 require 'models/Turbine.php';
 require 'models/turbineDeployed.php';
