@@ -18,7 +18,7 @@ class sensorTimeSeries
 
   public function __construct($data) {
     $this->sensorDeployedId = isset($data['sensorDeployedId']) ? intval($data['sensorDeployedId']) : null;
-    $this->dataCollectedDate = $data'dataCollectedDate'];
+    $this->dataCollectedDate = $data['dataCollectedDate'];
     $this->output = $data['output'];
     $this->heatRate = $data['heatRate'];
     $this->compressorEfficiency = $data['compressorEfficiency'];
