@@ -39,7 +39,7 @@ class TurbineDeployed
     // 4. Handle the results
     $arr = [];
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-      $theTurbineDeployed =  new Client($row);
+      $theTurbineDeployed =  new TurbineDeployed($row);
       array_push($arr, $theTurbineDeployed);
     }
 

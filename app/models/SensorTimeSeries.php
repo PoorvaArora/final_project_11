@@ -42,7 +42,7 @@ class sensorTimeSeries
     // 4. Handle the results
     $arr = [];
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-      $thesensorTimeSeries =  new Client($row);
+      $thesensorTimeSeries =  new SensorTimeSeries($row);
       array_push($arr, $thesensorTimeSeries);
     }
 
