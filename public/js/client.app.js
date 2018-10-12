@@ -1,7 +1,7 @@
 var agsApp = new Vue({
   el: '#agsClient',
   data: {
-client: [
+client:
   {
     clientId: "",
     clientName: "",
@@ -10,7 +10,6 @@ client: [
     gicsSubIndustry: "",
     headquarters: ""
   }
-]
   },
   computed: {
   },
