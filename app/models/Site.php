@@ -18,7 +18,7 @@ class Site
   public $addrCountry;
 
   public function __construct($data) {
-    $this->id = isset($data['clientId']) ? intval($data['clientId']) : null;
+    $this->siteId = isset($data['siteId']) ? intval($data['siteId']) : null;
     $this->clientId= $data['clientId'];
     $this->siteName = $data['siteName'];
     $this->siteDescription = $data['siteDescription'];
