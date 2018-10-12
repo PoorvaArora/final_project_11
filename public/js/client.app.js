@@ -16,7 +16,7 @@ client: [
   },
   methods: {
     fetchClients () {
-      fetch('http://ec2-52-43-127-41.us-west-2.compute.amazonaws.com/api/client.php')
+      fetch('api/client.php')
       .then( response => response.json() )
       // ^ This is the same as .then( function(response) {return response.json()} )
       .then( json => {
