@@ -32,31 +32,13 @@ class Site
     $this->addrZip = $data['addrZip'];
     $this->addrCountry = $data['addrCountry'];
   }
-  //
-  // public function create() {
-  //   $db = new PDO(DB_SERVER, DB_USER, DB_PW);
-  //   $sql = 'INSERT INTO Comment (comment)
-  //           VALUES (?)';
-  //
-  //   $statement = $db->prepare($sql);
-  //
-  //   $success = $statement->execute([
-  //     $this->comment
-  //   ]);
-  //
-  //   if (!$success) {
-  //     // TODO: Better error handling
-  //     die('SQL error');
-  //   }
-  //   $this->id = $db->lastInsertId();
-  // }
 
   public static function fetchAll() {
     // 1. Connect to the database
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
     // 2. Prepare the query
-    $sql = 'SELECT * FROM Site';
+    $sql = 'SELECT * FROM site';
     $statement = $db->prepare($sql);
 
     // 3. Run the query

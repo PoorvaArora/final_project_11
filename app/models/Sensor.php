@@ -24,7 +24,7 @@ class Sensor
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
     // 2. Prepare the query
-    $sql = 'SELECT * FROM Sensor';
+    $sql = 'SELECT * FROM sensor';
     $statement = $db->prepare($sql);
 
     // 3. Run the query
