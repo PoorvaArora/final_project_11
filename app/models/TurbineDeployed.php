@@ -14,7 +14,7 @@ class TurbineDeployed
 
 
   public function __construct($data) {
-    $this->turbineDeployedId= isset($data['TurbineDeployedId']) ? intval($data['TurbineDeployedId']) : null;
+    $this->turbineDeployedId= isset($data['turbineDeployedId']) ? intval($data['turbineDeployedId']) : null;
     $this->turbineId = $data ['turbineId'];
     $this->siteId = $data['siteId'];
     $this->serialNumber = $data['serialNumber'];
