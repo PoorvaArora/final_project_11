@@ -22,7 +22,7 @@ class TurbineDeployed
     $this->totalFiredHours = $data['totalFiredHours'];
     $this->totalStarts = $data['totalStarts'];
     $this->lastPlannedOutage = $data['lastPlannedOutage'];
-    $this->lastPlannedOutageDate = $data['lastPlannedOutageDate'];
+    $this->lastUnplannedOutageDate = $data['lastUnplannedOutageDate'];
   }
 
   public static function fetchAll() {
