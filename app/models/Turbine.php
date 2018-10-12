@@ -2,11 +2,11 @@
 
 class Turbine
 {
-  pubic $turbineId
-  pubic $turbineName
-  pubic $capacity
-  pubic $rampUpTime
-  pubic $maintenanceInterval
+  public $turbineId
+  public $turbineName
+  public $capacity
+  public $rampUpTime
+  public $maintenanceInterval
 
   public function __construct($data) {
     $this->id = isset($data['turbineId']) ? intval($data['turbineId']) : null;
