@@ -9,7 +9,7 @@ class Turbine
   public $maintenanceInterval;
 
   public function __construct($data) {
-    $this->id = isset($data['turbineId']) ? intval($data['turbineId']) : null;
+    $this->turbineId = isset($data['turbineId']) ? intval($data['turbineId']) : null;
     $this->turbineName = $data['turbineName'];
     $this->capacity = $data['capacity'];
     $this->rampUpTime = $data['rampUpTime'];

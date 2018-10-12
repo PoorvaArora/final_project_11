@@ -2,7 +2,6 @@
 
 class sensorTimeSeries
 {
-
   public $sensorDeployedId;
   public $dataCollectedDate;
   public $output;
@@ -13,8 +12,6 @@ class sensorTimeSeries
   public $firedHours;
   public $trips;
   public $starts;
-
-
 
   public function __construct($data) {
     $this->sensorDeployedId = isset($data['sensorDeployedId']) ? intval($data['sensorDeployedId']) : null;

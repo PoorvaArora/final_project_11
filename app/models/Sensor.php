@@ -9,9 +9,8 @@ class Sensor
   public $manufacturer;
   public $totalLifeExpentancyHours;
 
-
   public function __construct($data) {
-    $this->id = isset($data['sensorId']) ? intval($data['sensorId']) : null;
+    $this->sensorId = isset($data['sensorId']) ? intval($data['sensorId']) : null;
     $this->sensorName = $data['sensorName'];
     $this->sensorDescription = $data['sensorDescription'];
     $this->manufacturer = $data['manufacturer'];
