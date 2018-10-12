@@ -21,7 +21,7 @@ class TurbineDeployed
     $this->deployedDate = $data['deployedDate'];
     $this->totalFiredHours = $data['totalFiredHours'];
     $this->totalStarts = $data['totalStarts'];
-    $this->lastPlannedOutage = $data['lastPlannedOutage'];
+    $this->lastPlannedOutageDate = $data['lastPlannedOutageDate'];
     $this->lastUnplannedOutageDate = $data['lastUnplannedOutageDate'];
   }
 
