@@ -49,9 +49,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>1</td>
-        <td>Hoosier Energy</td>
+      <div id="agsClient">
+        <tr>
+        <td v-for="client in clients">1</td>
+        <td>{{client.clientName}}</td>
         <td>Hoosier Energy is a generation and transmission cooperative providing wholesale electric wind power and services to 18 member distribution cooperatives in central and southern Indiana and southeastern Illinois. Based in Bloomington, Indiana, Hoosier Energy operates renewable energy power plants and delivers power through nearly 1700 miles of transmission network.</td>
         <td>Bloomington, IN</td>
         <td>Energy Production</td>
@@ -65,6 +66,7 @@
         <td>Energy Service</td>
         <td>Space for additional notes</td>
       </tr>
+    </div>
     </tbody>
   </table>
 

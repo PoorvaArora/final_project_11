@@ -1,5 +1,5 @@
 var agsApp = new Vue({
-  el: '#ags',
+  el: '#agsClient',
   data: {
 client: [
   {
@@ -27,13 +27,9 @@ client: [
         console.log('TASK FETCH ERROR:');
         console.log(err);
       })
-    },
-    gotoTask(tid) {
-      window.location = 'task.html?taskId=' + tid;
     }
   },
   created () {
     this.fetchClients();
-    this.fetchTasks();
   }
 })
