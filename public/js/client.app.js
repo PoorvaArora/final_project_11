@@ -19,10 +19,7 @@ client:[
       fetch('api/client.php')
       .then( response => response.json() )
       // ^ This is the same as .then( function(response) {return response.json()} )
-      .then( json => {
-        this.clients = json;
-        console.log(agsApp.clients);
-      })
+      .then( json => {agsApp.clients = json})
       .catch( err => {
         console.log('TASK FETCH ERROR:');
         console.log(err);
