@@ -14,6 +14,12 @@ require '../../app/common.php';
 // echo $json;
 
 // 1. Go to the database and get selected turbine
+$turbineId = intval($_GET['turbineId'] ?? 0);
+
+if ($turbineId < 1) {
+  throw new Exception('Invalid Task ID');
+}
+
 $turbineById = Turbine::fetchTurbineByTurbineId($turbineId);
 
 // 2. Convert to JSON
