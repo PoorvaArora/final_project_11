@@ -19,6 +19,7 @@ var agsApp = new Vue({
       })
     },
     showTurbineDetails(turbineId){
+      console.log(turbineId);
       fetch('api/turbine.php?turbineId='+turbineId)
       .then( response => response.json() )
       // ^ This is the same as .then( function(response) {return response.json()} )
