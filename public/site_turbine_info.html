@@ -43,19 +43,19 @@
         <th scope="col">Turbine Name</th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td>Emerald Waters Plant</td>
-        <td>3SA.01</td>
+    <tbody id="agsSiteTurbine">
+      <tr v-for="siteTurb in sitesTurbs">
+        <td>siteTurb.turbineId</td>
+        <td>siteTurb.siteId</td>
       </tr>
-      <tr>
+      <!-- <tr>
         <td>Smith Energy Complex</td>
         <td>W7B.01</td>
       </tr>
       <tr>
         <td>King County Farm</td>
         <td>SF9.06</td>
-      </tr>
+      </tr> -->
     </tbody>
   </table>
 
@@ -65,7 +65,7 @@
     <!-- jQuery, Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
+    <script src="../js/site_turbine_info.js"></script>
 
   </body>
 </html>

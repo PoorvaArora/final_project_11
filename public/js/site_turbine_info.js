@@ -1,0 +1,23 @@
+var agsApp = new Vue({
+  el: '#agsSiteTurbine',
+  data: {
+    sitesTurbs:[]
+  },
+  computed: {
+  },
+  methods: {
+    fetchTurbineSite () {
+      fetch('api/turbineDeployed.php')
+      .then( response => response.json() )
+      // ^ This is the same as .then( function(response) {return response.json()} )
+      .then( json => {agsApp.sitesTurbs = json})
+      .catch( err => {
+        console.log('TASK FETCH ERROR:');
+        console.log(err);
+      })
+    }
+  },
+  created () {
+    this.fetchTurbineSite();
+  }
+})
