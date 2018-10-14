@@ -2,16 +2,22 @@
 
 require '../../app/common.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  require 'turbinePost.php';
-  exit;
-}
+//
+// // 1. Go to the database and get all client
+// $turbine = Turbine::fetchAll();
+//
+// // 2. Convert to JSON
+// $json = json_encode($turbine, JSON_PRETTY_PRINT);
+//
+// // 3. Print
+// header('Content-Type: application/json');
+// echo $json;
 
-// 1. Go to the database and get all client
-$turbine = Turbine::fetchAll();
+// 1. Go to the database and get selected turbine
+$turbineById = Turbine::fetchTurbineByTurbineId($turbineId);
 
 // 2. Convert to JSON
-$json = json_encode($turbine, JSON_PRETTY_PRINT);
+$json = json_encode($turbineById, JSON_PRETTY_PRINT);
 
 // 3. Print
 header('Content-Type: application/json');

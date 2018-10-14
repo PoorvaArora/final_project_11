@@ -13,7 +13,7 @@
 
     <title>Client Details</title>
   </head>
-  <body>
+  <body id="agsSiteTurbine">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -39,25 +39,33 @@
   <table class="table table-striped client-table" id="siteTable">
     <thead class="client-header">
       <tr>
-        <th scope="col">Site Name</th>
+        <th scope="col">Turbine Id</th>
+        <th scope="col">Site Id</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="siteTurb in sitesTurbs">
+        <td>{{siteTurb.turbineId}} <a href="#" v-on:click="showTurbineDetails(siteTurb.turbineId)">Details</a></td>
+        <td>{{siteTurb.siteId}} <a href="#" v-on:click="showSiteDetails(siteTurb.siteId)">Details</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table table-striped client-table" id="siteTable" v-show="isTurbineDisplay">
+    <thead class="client-header">
+      <tr>
+        <th scope="col">Turbine Id</th>
         <th scope="col">Turbine Name</th>
       </tr>
     </thead>
-    <tbody id="agsSiteTurbine">
-      <tr v-for="siteTurb in sitesTurbs">
-        <td>{{siteTurb.turbineId}}</td>
-        <td>{{siteTurb.siteId}}</td>
+    <tbody>
+      <tr v-for="turbine in turbines">
+        <td>{{turbine.turbineId}}</td>
+        <td>{{turbine.turbineName}}</td>
       </tr>
-      <!-- <tr>
-        <td>Smith Energy Complex</td>
-        <td>W7B.01</td>
-      </tr>
-      <tr>
-        <td>King County Farm</td>
-        <td>SF9.06</td>
-      </tr> -->
     </tbody>
   </table>
+
 
 <div>
 
