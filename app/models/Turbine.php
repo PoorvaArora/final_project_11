@@ -41,7 +41,7 @@ class Turbine
       $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
       // 2. Prepare the query
-      $sql = 'SELECT * FROM Work WHERE task_id = ?';
+      $sql = 'SELECT * FROM turbine WHERE turbineId = ?';
 
       $statement = $db->prepare($sql);
 
