@@ -28,7 +28,7 @@ var agsApp = new Vue({
         agsApp.isTurbineDisplay = true;
       })
       .catch( err => {
-        console.log('TASK FETCH ERROR:');
+        console.log('TURBINE FETCH ERROR:');
         console.log(err);
       })
     },
@@ -40,7 +40,7 @@ var agsApp = new Vue({
         agsApp.isSiteDisplay = true;
       })
       .catch( err => {
-        console.log('TASK FETCH ERROR:');
+        console.log('SITE FETCH ERROR:');
         console.log(err);
       })
     }
