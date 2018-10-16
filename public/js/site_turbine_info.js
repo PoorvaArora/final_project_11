@@ -3,6 +3,7 @@ var agsApp = new Vue({
   data: {
     sitesTurbs:[],
     turbines:[],
+    sites:[],
     isTurbineDisplay:false,
     isSiteDisplay:false
   },
