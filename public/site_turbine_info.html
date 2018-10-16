@@ -46,8 +46,8 @@
     </thead>
     <tbody>
       <tr v-for="siteTurb in sitesTurbs">
-        <td>{{siteTurb.turbineId}} <a href="#" v-on:click="showTurbineDetails(siteTurb.turbineId)">Details</a></td>
-        <td>{{siteTurb.siteId}} <a href="#" v-on:click="showSiteDetails(siteTurb.siteId)">Details</a></td>
+        <td>{{siteTurb.turbineName}} <a href="#" v-on:click="showTurbineDetails(siteTurb.turbineId)">Details</a></td>
+        <td>{{siteTurb.siteName}} <a href="#" v-on:click="showSiteDetails(siteTurb.siteId)">Details</a></td>
       </tr>
     </tbody>
   </table>
@@ -57,6 +57,9 @@
       <tr>
         <th scope="col">Turbine Id</th>
         <th scope="col">Turbine Name</th>
+        <th scope="col">Turbine Description</th>
+        <th scope="col">Turbine Capacity</th>
+        <th scope="col">Turbine RampUpTime</th>
       </tr>
     </thead>
     <tbody>
