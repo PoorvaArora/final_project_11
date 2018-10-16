@@ -5,6 +5,7 @@ class Turbine
   public $turbineId;
   public $turbineName;
   public $capacity;
+  public $turbineDescription;
   public $rampUpTime;
   public $maintenanceInterval;
 
@@ -12,6 +13,7 @@ class Turbine
     $this->turbineId = isset($data['turbineId']) ? intval($data['turbineId']) : null;
     $this->turbineName = $data['turbineName'];
     $this->capacity = $data['capacity'];
+    $this->turbineDescription = $data['turbineDescription'];
     $this->rampUpTime = $data['rampUpTime'];
     $this->maintenanceInterval = $data['maintenanceInterval'];
 }
