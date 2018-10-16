@@ -17,7 +17,7 @@ require '../../app/common.php';
 $turbineId = intval($_GET['turbineId'] ?? 0);
 
 if ($turbineId < 1) {
-  throw new Exception('Invalid Task ID');
+  throw new Exception('Invalid Turbine ID');
 }
 
 $turbineById = Turbine::fetchTurbineByTurbineId($turbineId);

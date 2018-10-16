@@ -2,16 +2,18 @@
 
 require '../../app/common.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-  exit;
+// 1. Go to the database and get selected turbine
+$siteId = intval($_GET['siteId'] ?? 0);
+
+if ($siteId < 1) {
+  throw new Exception('Invalid Site ID');
 }
 
-// 1. Go to the database and get all client
-$site = Site::fetchAll();
+$siteById = Turbine::fetchSiteBySiteId($siteId);
 
 // 2. Convert to JSON
-$json = json_encode($site, JSON_PRETTY_PRINT);
+$json = json_encode($siteById, JSON_PRETTY_PRINT);
 
 // 3. Print
 header('Content-Type: application/json');
