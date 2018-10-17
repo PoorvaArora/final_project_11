@@ -72,7 +72,7 @@ class Site
     $arr = [];
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
       // 4.a. For each row, make a new work object
-      $siteItem =  new Turbine($row);
+      $siteItem =  new Site($row);
 
       array_push($arr, $siteItem);
     }
