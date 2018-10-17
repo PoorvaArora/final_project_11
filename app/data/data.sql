@@ -5,6 +5,7 @@ DROP TABLE IF EXISTS site;
 DROP TABLE IF EXISTS turbineDeployed;
 DROP TABLE IF EXISTS sensorDeployed;
 DROP TABLE IF EXISTS sensorTimeSeries;
+DROP TABLE IF EXISTS note;
 
 
 CREATE TABLE client (
@@ -87,4 +88,11 @@ CREATE TABLE sensorTimeSeries
   trips INT NOT NULL,
   starts INT NOT NULL,
   FOREIGN KEY (sensorDeployedId) REFERENCES sensorDeployed(sensorDeployedId)
+);
+
+CREATE TABLE Note (
+  id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  note VARCHAR(30) NOT NULL,
+  clientId INT NOT NULL,
+  FOREIGN KEY (clientId) REFERENCES client(clientId)
 );
