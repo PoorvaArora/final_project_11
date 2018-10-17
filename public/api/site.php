@@ -10,7 +10,7 @@ if ($siteId < 1) {
   throw new Exception('Invalid Site ID');
 }
 
-$siteById = Turbine::fetchSiteBySiteId($siteId);
+$siteById = Site::fetchSiteBySiteId($siteId);
 
 // 2. Convert to JSON
 $json = json_encode($siteById, JSON_PRETTY_PRINT);
