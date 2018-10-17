@@ -47,7 +47,7 @@ var agsApp = new Vue({
     hideTurbineDetails(){
       this.isTurbineDisplay = false;
     },
-    hideTurbineDetails(){
+    hideSiteDetails(){
       this.isSiteDisplay = false;
     }
   },
