@@ -43,6 +43,9 @@ var agsApp = new Vue({
         console.log('SITE FETCH ERROR:');
         console.log(err);
       })
+    },
+    hideTurbineDetails(){
+      this.isTurbineDisplay = false;
     }
   },
   created () {

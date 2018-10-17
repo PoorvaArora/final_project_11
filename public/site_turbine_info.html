@@ -70,7 +70,7 @@
         <td>{{turbine.turbineDescription}}</td>
         <td>{{turbine.capacity}}</td>
         <td>{{turbine.rampUpTime}}</td>
-        <td><a href="#" v-show="!isTurbineDisplay">Hide</a></td>
+        <td><a href="#" v-on:click="hideTurbineDetails()">Hide</a></td>
       </tr>
     </tbody>
 </table>
