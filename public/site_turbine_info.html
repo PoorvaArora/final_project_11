@@ -52,7 +52,7 @@
     </tbody>
   </table>
 
-  <table class="table table-striped client-table" id="siteTable" v-show="isTurbineDisplay">
+  <table class="table table-striped client-table" id="turbineTable" v-show="isTurbineDisplay">
     <thead class="client-header">
       <tr>
         <th scope="col">Turbine Id</th>
@@ -71,6 +71,33 @@
         <td>{{turbine.rampUpTime}}</td>
       </tr>
     </tbody>
+
+    <table class="table table-striped client-table" id="siteTable" v-show="isSiteDisplay">
+      <thead class="client-header">
+        <tr>
+          <th scope="col">Site Id</th>
+          <th scope="col">Client Id</th>
+          <th scope="col">Site Name</th>
+          <th scope="col">Site Description</th>
+          <th scope="col">Primary Contact</th>
+          <th scope="col">Capacity</th>
+          <th scope="col">commercialDate</th>
+          <th scope="col">Address</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="site in sites">
+          <td>{{site.siteId}}</td>
+          <td>{{site.clientId}}</td>
+          <td>{{site.siteName}}</td>
+          <td>{{site.siteDescription}}</td>
+          <td>{{site.primaryContact}}</td>
+          <td>{{site.capacity}}</td>
+          <td>{{site.commercialDate}}</td>
+          <td>{{site.addrLine1}} + '' + {{site.addrLine2}}</td>
+        </tr>
+      </tbody>
+
   </table>
 
 </div>
