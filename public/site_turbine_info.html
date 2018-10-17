@@ -60,6 +60,7 @@
         <th scope="col">Turbine Description</th>
         <th scope="col">Turbine Capacity</th>
         <th scope="col">Turbine RampUpTime</th>
+        <th scope="col">Hide Table</th>
       </tr>
     </thead>
     <tbody>
@@ -69,6 +70,7 @@
         <td>{{turbine.turbineDescription}}</td>
         <td>{{turbine.capacity}}</td>
         <td>{{turbine.rampUpTime}}</td>
+        <td><a href="#" v-show="!isTurbineDisplay">Hide</a></td>
       </tr>
     </tbody>
 </table>
@@ -84,6 +86,7 @@
           <th scope="col">commercialDate</th>
           <th scope="col">Address</th>
           <th scope="col">Zip code</th>
+          <th scope="col">Hide Table</th>
         </tr>
       </thead>
       <tbody>
