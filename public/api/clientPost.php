@@ -1,6 +1,6 @@
 <?php
 
-$client = new CLient($_POST);
+$client = new Client($_POST);
 
 $client->create();
 

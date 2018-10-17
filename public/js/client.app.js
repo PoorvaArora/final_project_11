@@ -1,7 +1,7 @@
 var agsApp = new Vue({
   el: '#agsClient',
   data: {
-clients:[]
+    clients:[]
   },
   computed: {
   },
