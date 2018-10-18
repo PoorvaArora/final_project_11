@@ -1,13 +1,7 @@
 var notesApp = new Vue({
   el: '#agsNotes',
   data: {
-    notes:[
-      {
-        id:'',
-        clientId:'',
-        note:''
-      }
-    ],
+    notes:[],
     noteForm: { },
     clients: []
   },
