@@ -1,5 +1,5 @@
 var notesApp = new Vue({
-  el: '#notes',
+  el: '#agsNotes',
   data: {
     notes:[
       {
