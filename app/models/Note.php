@@ -50,7 +50,7 @@ class Note
     }
 
     return $arr;
-  },
+  }
 
   // public static function fetchNotesByClientId(int $clientId) {
   //   // 1. Connect to the database
