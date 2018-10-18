@@ -13,7 +13,7 @@ class Note
 
   public function create() {
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
-    $sql = 'INSERT INTO note (id,note)
+    $sql = 'INSERT INTO note (clientId,note)
             VALUES (?,?)';
 
     $statement = $db->prepare($sql);
