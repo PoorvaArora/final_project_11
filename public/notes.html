@@ -62,8 +62,9 @@
   <div class="form-group row">
     <label for="country" class="col-md-3 col-form-label">Select Client</label>
     <div class="col-md-4">
-      <select class="form-control form-control-sm" v-for="client in clients">
-        <option>{{client.clientId}}</option>
+      <select >
+        <option v-for="client in clients" v-bind:value="client.clientId">
+        </option>
       </select>
     </div>
   </div>
