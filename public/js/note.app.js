@@ -28,7 +28,7 @@ var notesApp = new Vue({
       fetch('api/client.php')
       .then( response => response.json() )
       // ^ This is the same as .then( function(response) {return response.json()} )
-      .then( json => {agsApp.clients = json})
+      .then( json => {noteApp.clients = json})
       .catch( err => {
         console.log('TASK FETCH ERROR:');
         console.log(err);
