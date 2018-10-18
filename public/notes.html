@@ -38,7 +38,7 @@
         </div>
   </nav>
 <h4 class="client-header">Add notes</h4>
-<div id="noteApp">
+<div id="notes">
     <table class="table table-striped client-table" id="clientTable">
     <thead class="client-header">
       <tr>
@@ -64,6 +64,7 @@
     <div class="col-md-4">
       <select >
         <option v-for="client in clients" v-bind:value="client.clientId">
+          {{client.clientId}}
         </option>
       </select>
     </div>
