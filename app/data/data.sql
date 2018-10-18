@@ -90,7 +90,7 @@ CREATE TABLE sensorTimeSeries
   FOREIGN KEY (sensorDeployedId) REFERENCES sensorDeployed(sensorDeployedId)
 );
 
-CREATE TABLE Note (
+CREATE TABLE note (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   note VARCHAR(30) NOT NULL,
   clientId INT NOT NULL,
