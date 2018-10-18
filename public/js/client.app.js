@@ -16,16 +16,6 @@ var agsApp = new Vue({
         console.log(err);
       })
     },
-    fetchNotes () {
-    fetch('api/notes.php')
-    .then( response => response.json() )
-    // ^ This is the same as .then( function(response) {return response.json()} )
-    .then( json => {agsApp.notes = json})
-    .catch( err => {
-      console.log('TASK FETCH ERROR:');
-      console.log(err);
-    })
-  }
   },
   created () {
     this.fetchClients();

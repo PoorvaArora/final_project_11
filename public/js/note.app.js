@@ -9,6 +9,7 @@ var notesApp = new Vue({
       }
     ],
     noteForm: { },
+    clients: []
   },
   computed: {
   },
@@ -23,7 +24,16 @@ var notesApp = new Vue({
         console.log(err);
       })
     },
-
+    fetchClients () {
+      fetch('api/client.php')
+      .then( response => response.json() )
+      // ^ This is the same as .then( function(response) {return response.json()} )
+      .then( json => {agsApp.clients = json})
+      .catch( err => {
+        console.log('TASK FETCH ERROR:');
+        console.log(err);
+      })
+    },
     handleNoteForm(e) {
       const s = JSON.stringify(this.noteForm);
       console.log(s);
@@ -53,5 +63,6 @@ var notesApp = new Vue({
   },
   created () {
     this.fetchNotes();
+    this.fetchClients();
   }
 })

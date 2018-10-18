@@ -38,7 +38,8 @@
         </div>
   </nav>
 <h4 class="client-header">Add notes</h4>
-  <table class="table table-striped client-table" id="clientTable">
+<div id="noteApp">
+    <table class="table table-striped client-table" id="clientTable">
     <thead class="client-header">
       <tr>
         <th scope="col">Id</th>
@@ -57,23 +58,24 @@
   </table>
 
 <h4 class="client-header">Additional Notes</h4>
-  <form id="client-form">
+  <form id="client-form" @submit.prevent="handleNoteForm" id="newNoteForm">
   <div class="form-group row">
     <label for="country" class="col-md-3 col-form-label">Select Client</label>
     <div class="col-md-4">
       <select class="form-control form-control-sm" v-for="client in clients">
-        <option>client.clientId</option>
+        <option>{{client.clientId}}</option>
       </select>
     </div>
   </div>
   <div class="form-group row">
     <label for="places" class="col-md-3 col-form-label">Enter additional notes</label>
     <div class="col-md-4">
-      <textarea class="form-control" rows="5" id="notes"></textarea>
+      <textarea class="form-control" rows="5" id="note" v-model="noteForm.note"></textarea>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary submit-notes-button">Submit</button>
+  <button type="submit"  id="submitNewNote"class="btn btn-primary submit-notes-button">Submit</button>
 </form>
+</div>
 
     <!-- jQuery, Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
