@@ -21,7 +21,9 @@ class Note
 
     $success = $statement->execute([
       $this->id,
+      $this->clientId,
       $this->note
+
     ]);
 
     if (!$success) {
