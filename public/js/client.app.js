@@ -3,7 +3,7 @@ var agsApp = new Vue({
   data: {
     clients:[],
     notes:[],
-    showNotes: false
+    showTableNotes: false
   },
   computed: {
   },
@@ -24,7 +24,7 @@ var agsApp = new Vue({
         .then( response => response.json() )
         .then( json => {
           agsApp.notes = json;
-          agsApp.showNotes = true;
+          agsApp.showTableNotes = true;
         })
         .catch( err => {
           console.log('NOTES FETCH ERROR:');
