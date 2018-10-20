@@ -12,6 +12,7 @@ var agsApp = new Vue({
       // ^ This is the same as .then( function(response) {return response.json()} )
       .then( json => {
         agsApp.sensors = json;
+          this.buildEffortChart();
       console.log(agsApp.sensors);
     })
       .catch( err => {
@@ -77,6 +78,5 @@ var agsApp = new Vue({
   },
   created () {
     this.fetchSensorTimeSeries();
-    this.buildEffortChart();
   }
 })
