@@ -10,7 +10,10 @@ var agsApp = new Vue({
       fetch('api/sensorTimeSeries.php')
       .then( response => response.json() )
       // ^ This is the same as .then( function(response) {return response.json()} )
-      .then( json => {agsApp.sensors = json})
+      .then( json => {
+        agsApp.sensors = json;
+      console.log(agsApp.sensors);
+    })
       .catch( err => {
         console.log('SENSOR FETCH ERROR:');
         console.log(err);
