@@ -96,3 +96,6 @@ CREATE TABLE note (
   clientId INT NOT NULL,
   FOREIGN KEY (clientId) REFERENCES client(clientId)
 );
+
+INSERT INTO note (id, note, clientId)
+VALUES (1, 'I have a note', 1);
