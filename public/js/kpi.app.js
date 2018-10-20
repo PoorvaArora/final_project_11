@@ -67,8 +67,9 @@ var agsApp = new Vue({
             series: [{
                 type: 'area',
                 name: 'Trips',
-                data:  this.sensors.map( entry =>
-                  [entry.dataCollectedDate, entry.trips]
+                data: JSON.stringify(this.sensors)
+                // data:  this.sensors.map( entry =>
+                //   [entry.dataCollectedDate, entry.trips]
                 ) //Expects [ [date1, val1], [date2, val2], [] ]
             }]
         });
