@@ -12,7 +12,7 @@ var agsApp = new Vue({
       // ^ This is the same as .then( function(response) {return response.json()} )
       .then( json => {
         agsApp.sensors = json;
-      console.log(JSON.stringify(agsApp.sensors));
+      console.log(agsApp.sensors);
     })
       .catch( err => {
         console.log('SENSOR FETCH ERROR:');
@@ -67,7 +67,7 @@ var agsApp = new Vue({
             series: [{
                 type: 'area',
                 name: 'Trips',
-                data: this.sensors
+                data: agsApp.sensors
                 // data:  this.sensors.map( entry =>
                 //   [entry.dataCollectedDate, entry.trips]
                  //Expects [ [date1, val1], [date2, val2], [] ]
