@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 // // 3. Print
 // header('Content-Type: application/json');
 // echo $json;
-
+$clientId = intval($_GET['clientId'] ?? 0);
 
 $notesByClientId = Note::fetchNotesByClientId($clientId);
 
