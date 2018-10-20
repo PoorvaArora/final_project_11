@@ -39,7 +39,8 @@
         </div>
   </nav>
 <h4 class="client-header">Client Information</h4>
-  <table class="table table-striped client-table" id="clientTable">
+<div id="agsClient">
+    <table class="table table-striped client-table" id="clientTable">
     <thead class="client-header">
       <tr>
         <th scope="col">Id</th>
@@ -50,7 +51,7 @@
         <th scope="col">Show Notes</th>
       </tr>
     </thead>
-    <tbody id="agsClient">
+    <tbody>
         <tr v-for="client in clients">
         <td>{{client.clientId}}</td>
         <td>{{client.clientName}}</td>
@@ -62,8 +63,24 @@
     </div>
     </tbody>
   </table>
-
-
+  <table class="table table-striped client-table" id="notesTable">
+  <thead class="client-header">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Client Id</th>
+      <th scope="col">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr v-for="note in notes">
+      <td>{{note.id}}</td>
+      <td>{{note.clientId}}</td>
+      <td>{{note.note}}</td>
+    </tr>
+  </div>
+  </tbody>
+</table>
+</div>
     <!-- jQuery, Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
