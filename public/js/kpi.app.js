@@ -12,7 +12,7 @@ var agsApp = new Vue({
       // ^ This is the same as .then( function(response) {return response.json()} )
       .then( json => {
         agsApp.sensors = json;
-      console.log(agsApp.sensors);
+      console.log(JSON.stringify(agsApp.sensors));
     })
       .catch( err => {
         console.log('SENSOR FETCH ERROR:');
