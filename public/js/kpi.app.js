@@ -1,24 +1,33 @@
-var agsApp = new Vue({
+var kpiApp = new Vue({
   el: '#agsKPI',
   data: {
-    sensors:[]
+    sensorTime:[]
   },
   computed: {
   },
   methods: {
-    fetchSensorTimeSeries () {
-      fetch('api/sensorTimeSeries.php')
+    fetchSensorTimeSeries (turbineId) {
+      fetch('api/sensorTimeSeries.php?turbineId='+turbineId')
       .then( response => response.json() )
       // ^ This is the same as .then( function(response) {return response.json()} )
       .then( json => {
-        agsApp.sensors = json;
-          this.buildEffortChart();
+        kpiApp.sensorTime = json;
+        kpiApp.formatSensorTime();
+        kpiApp.buildEffortChart();
       console.log(agsApp.sensors);
     })
       .catch( err => {
         console.log('SENSOR FETCH ERROR:');
         console.log(err);
       })
+    },
+    formatSensorTime(){
+      this.sensorTime.forEach(
+        (entry, index, arr) => {
+          entry.dateCollected = Date.parse(entry.dataCollectedDate);
+          entry.output = Number(entry.output);
+        }
+      )
     },
     buildEffortChart() {
       Highcharts.chart('effortChart', {
@@ -68,8 +77,11 @@ var agsApp = new Vue({
             series: [{
                 type: 'area',
                 name: 'Trips',
-                data: this.sensors.map( entry =>
-                 [entry.dataCollectedDate, entry.trips])
+                data: kpiApp.sensorTime.map( entry=>
+                  [entry.dateCollected, entry.output]
+                )
+                // data: this.sensors.map( entry =>
+                //  [entry.dataCollectedDate, entry.trips])
                 // data:  this.sensors.map( entry =>
                 //   [entry.dataCollectedDate, entry.trips]
                  //Expects [ [date1, val1], [date2, val2], [] ]
@@ -78,6 +90,6 @@ var agsApp = new Vue({
     }
   },
   created () {
-    this.fetchSensorTimeSeries();
+    this.fetchSensorTimeSeries(turbineId);
   }
 })

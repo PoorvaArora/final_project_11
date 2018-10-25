@@ -2,13 +2,38 @@
 
 require '../../app/common.php';
 
+$turbineId = intval($_GET['turbineId'] ?? 0);
 
-// 1. Go to the database and get all client
-$sensorTimeSeries = SensorTimeSeries::fetchAll();
+if($turbineId < 1){
+  // 1. Go to the database and get all client
+  $sensorTimeSeries = SensorTimeSeries::fetchAll();
+
+  // 2. Convert to JSON u
+  $json = json_encode($sensorTimeSeries, JSON_PRETTY_PRINT);
+
+  // 3. Print
+  header('Content-Type: application/json');
+  echo $json;
+}
+else {
+$sensorTimeSeriesByTurbineId = SensorTimeSeries::fetchTimeSeriesByTurbineId($turbineId);
 
 // 2. Convert to JSON
-$json = json_encode($sensorTimeSeries, JSON_PRETTY_PRINT);
+$json = json_encode($sensorTimeSeriesByTurbineId, JSON_PRETTY_PRINT);
 
 // 3. Print
 header('Content-Type: application/json');
 echo $json;
+}
+
+
+//
+// // 1. Go to the database and get all client
+// $sensorTimeSeries = SensorTimeSeries::fetchAll();
+//
+// // 2. Convert to JSON
+// $json = json_encode($sensorTimeSeries, JSON_PRETTY_PRINT);
+//
+// // 3. Print
+// header('Content-Type: application/json');
+// echo $json;
