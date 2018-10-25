@@ -41,18 +41,14 @@
 <h4 class="kpi-header">Key Performance Indicator Dashboard</h4>
 <h4 class="client-header">Select Turbine</h4>
 <div id="agsKPI">
-  <div class="form-group row">
-    <form id="client-form" id="turbineForm">
     <label for="country" class="col-md-3 col-form-label">Select Turbine</label>
     <div class="col-md-4">
-      <select v-model="turbineForm.turbineId" v-on:change="fetchSensorTimeSeries(turbineForm.turbineId)">
+      <select v-model="turbineId" v-on:change="fetchSensorTimeSeries(turbineId)">
         <option v-for="turbine in turbines" v-bind:value="turbine.turbineId">
           {{turbine.turbineId}}
         </option>
       </select>
     </div>
-  </form>
-  </div>
 </div>
 </div>
 
