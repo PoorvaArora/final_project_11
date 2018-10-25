@@ -102,6 +102,6 @@ var kpiApp = new Vue({
   },
   created () {
     this.fetchTurbines();
-    this.fetchSensorTimeSeries(turbineId);
+  //  this.fetchSensorTimeSeries(turbineId);
   }
 })
