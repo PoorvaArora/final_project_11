@@ -11,7 +11,7 @@ var kpiApp = new Vue({
       fetch('api/turbine.php')
       .then( response => response.json() )
       // ^ This is the same as .then( function(response) {return response.json()} )
-      .then( json => {agsApp.turbines = json})
+      .then( json => {kpiApp.turbines = json})
       .catch( err => {
         console.log('TASK FETCH ERROR:');
         console.log(err);
@@ -25,7 +25,7 @@ var kpiApp = new Vue({
         kpiApp.sensorTime = json;
         kpiApp.formatSensorTime();
         kpiApp.buildEffortChart();
-      console.log(agsApp.sensors);
+    //  console.log(agsApp.sensors);
     })
       .catch( err => {
         console.log('SENSOR FETCH ERROR:');
