@@ -42,7 +42,7 @@
 <h4 class="client-header">Select Turbine</h4>
 <div id="agsKPI">
   <div class="form-group row">
-    <form id="client-form" @submit.prevent="fetchSensorTimeSeries()" id="newTurbineForm">
+    <form id="client-form" id="newTurbineForm">
     <label for="country" class="col-md-3 col-form-label">Select Turbine</label>
     <div class="col-md-4">
       <select v-model="turbineForm.turbineId" v-on:change="fetchSensorTimeSeries(turbineForm.turbineId)">
@@ -54,14 +54,7 @@
   </form>
   </div>
 </div>
-<!-- <p class="text">
-  This is a sample just to provide the look and feel of the page. AGS's KPIs will be integrated later upon further clarification from Tommy Edison.
-</p> -->
-    <!-- <iframe src = "https://public.tableau.com/profile/poorva.arora#!/vizhome/team_skills_dashboard/Dashboard1" width = "555" height = "200">
-    </iframe> -->
-
-
-  </div>
+</div>
 
 <div>
 
