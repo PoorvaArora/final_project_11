@@ -1,11 +1,22 @@
 var kpiApp = new Vue({
   el: '#agsKPI',
   data: {
-    sensorTime:[]
+    sensorTime:[],
+    turbines:[]
   },
   computed: {
   },
   methods: {
+    fetchTurbines () {
+      fetch('api/turbine.php')
+      .then( response => response.json() )
+      // ^ This is the same as .then( function(response) {return response.json()} )
+      .then( json => {agsApp.turbines = json})
+      .catch( err => {
+        console.log('TASK FETCH ERROR:');
+        console.log(err);
+      })
+    },
     fetchSensorTimeSeries (turbineId) {
       fetch('api/sensorTimeSeries.php?turbineId='+turbineId')
       .then( response => response.json() )
@@ -90,6 +101,7 @@ var kpiApp = new Vue({
     }
   },
   created () {
+    this.fetchTurbines();
     this.fetchSensorTimeSeries(turbineId);
   }
 })
