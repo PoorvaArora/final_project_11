@@ -38,7 +38,7 @@ var kpiApp = new Vue({
         (entry, index, arr) => {
           entry.dateCollected = Date.parse(entry.dataCollectedDate);
           entry.output = Number(entry.output);
-          entry.heartRate = Number(entry.output);
+          entry.heartRate = Number(entry.heartRate);
         }
       )
     },
