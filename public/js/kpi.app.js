@@ -26,6 +26,7 @@ var kpiApp = new Vue({
         kpiApp.formatSensorTime();
         kpiApp.buildOutputChart();
         kpiApp.buildHeatRateChart();
+        kpiApp.buildCompressorEfficiencyChart();
     //  console.log(agsApp.sensors);
     })
       .catch( err => {
