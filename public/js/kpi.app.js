@@ -38,7 +38,7 @@ var kpiApp = new Vue({
         (entry, index, arr) => {
           entry.dateCollected = Date.parse(entry.dataCollectedDate);
           entry.output = Number(entry.output);
-          entry.heartRate = Number(entry.heartRate);
+          entry.heatRate = Number(entry.heatRate);
         }
       )
     },
@@ -97,7 +97,7 @@ var kpiApp = new Vue({
         });
     },
     buildHeartRateChart() {
-      Highcharts.chart('heartRateChart', {
+      Highcharts.chart('heatRateChart', {
             chart: {
                 zoomType: 'x'
             },
@@ -145,7 +145,7 @@ var kpiApp = new Vue({
                 type: 'area',
                 name: 'Heart Rate',
                 data: kpiApp.sensorTime.map( entry=>
-                  [entry.dateCollected, entry.heartRate]
+                  [entry.dateCollected, entry.heatRate]
                 )
             }]
         });
