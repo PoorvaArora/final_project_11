@@ -24,7 +24,8 @@ var kpiApp = new Vue({
       .then( json => {
         kpiApp.sensorTime = json;
         kpiApp.formatSensorTime();
-        kpiApp.buildEffortChart();
+        kpiApp.buildOutputChart();
+        kpiApp.buildHeartRateChart();
     //  console.log(agsApp.sensors);
     })
       .catch( err => {
@@ -37,23 +38,24 @@ var kpiApp = new Vue({
         (entry, index, arr) => {
           entry.dateCollected = Date.parse(entry.dataCollectedDate);
           entry.output = Number(entry.output);
+          entry.heartRate = Number(entry.output);
         }
       )
     },
-    buildEffortChart() {
-      Highcharts.chart('effortChart', {
+    buildOutputChart() {
+      Highcharts.chart('outputChart', {
             chart: {
                 zoomType: 'x'
             },
             title: {
-                text: 'Cumulative Effort'
+                text: 'Output'
             },
             xAxis: {
                 type: 'datetime'
             },
             yAxis: {
                 title: {
-                    text: 'Trips'
+                    text: 'Output'
                 }
             },
             legend: {
@@ -91,11 +93,60 @@ var kpiApp = new Vue({
                 data: kpiApp.sensorTime.map( entry=>
                   [entry.dateCollected, entry.output]
                 )
-                // data: this.sensors.map( entry =>
-                //  [entry.dataCollectedDate, entry.trips])
-                // data:  this.sensors.map( entry =>
-                //   [entry.dataCollectedDate, entry.trips]
-                 //Expects [ [date1, val1], [date2, val2], [] ]
+            }]
+        });
+    },
+    buildHeartRateChart() {
+      Highcharts.chart('heartRateChart', {
+            chart: {
+                zoomType: 'x'
+            },
+            title: {
+                text: 'Heart Rate'
+            },
+            xAxis: {
+                type: 'datetime'
+            },
+            yAxis: {
+                title: {
+                    text: 'Heart Rate'
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            plotOptions: {
+                area: {
+                    fillColor: {
+                        linearGradient: {
+                            x1: 0,
+                            y1: 0,
+                            x2: 0,
+                            y2: 1
+                        },
+                        stops: [
+                            [0, Highcharts.getOptions().colors[0]],
+                            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                        ]
+                    },
+                    marker: {
+                        radius: 2
+                    },
+                    lineWidth: 1,
+                    states: {
+                        hover: {
+                            lineWidth: 1
+                        }
+                    },
+                    threshold: null
+                }
+            },
+            series: [{
+                type: 'area',
+                name: 'Heart Rate',
+                data: kpiApp.sensorTime.map( entry=>
+                  [entry.dateCollected, entry.heartRate]
+                )
             }]
         });
     }
