@@ -25,7 +25,7 @@ var kpiApp = new Vue({
         kpiApp.sensorTime = json;
         kpiApp.formatSensorTime();
         kpiApp.buildOutputChart();
-        kpiApp.buildHeartRateChart();
+        kpiApp.buildHeatRateChart();
     //  console.log(agsApp.sensors);
     })
       .catch( err => {
@@ -96,20 +96,71 @@ var kpiApp = new Vue({
             }]
         });
     },
-    buildHeartRateChart() {
+    buildHeatRateChart() {
       Highcharts.chart('heatRateChart', {
             chart: {
                 zoomType: 'x'
             },
             title: {
-                text: 'Heart Rate'
+                text: 'Heat Rate'
+            },
+            // xAxis: {
+            //     type: 'datetime'
+            // },
+            yAxis: {
+                title: {
+                    text: 'Heat Rate'
+                }
+            },
+            legend: {
+              layout: 'vertical',
+               align: 'right',
+               verticalAlign: 'middle'
+            },
+            plotOptions: {
+              series: {
+             label: {
+                 connectorAllowed: false
+             },
+     }
+            },
+            responsive: {
+              rules: [{
+           condition: {
+               maxWidth: 500
+           },
+           chartOptions: {
+               legend: {
+                   layout: 'horizontal',
+                   align: 'center',
+                   verticalAlign: 'bottom'
+               }
+           }
+       }]
+   },
+            series: [{
+                type: 'line',
+                name: 'Heat Rate',
+                data: kpiApp.sensorTime.map( entry=>
+                  [entry.output, entry.heatRate]
+                )
+            }]
+        });
+    },
+    buildOutputChart() {
+      Highcharts.chart('compressorEfficiencyChart', {
+            chart: {
+                zoomType: 'x'
+            },
+            title: {
+                text: 'Compressor Efficiency'
             },
             xAxis: {
                 type: 'datetime'
             },
             yAxis: {
                 title: {
-                    text: 'Heart Rate'
+                    text: 'Compressor Efficiency'
                 }
             },
             legend: {
@@ -143,13 +194,13 @@ var kpiApp = new Vue({
             },
             series: [{
                 type: 'area',
-                name: 'Heart Rate',
+                name: 'Trips',
                 data: kpiApp.sensorTime.map( entry=>
-                  [entry.dateCollected, entry.heatRate]
+                  [entry.dateCollected, entry.output]
                 )
             }]
         });
-    }
+    },
   },
   created () {
     this.fetchTurbines();
