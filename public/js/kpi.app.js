@@ -39,6 +39,7 @@ var kpiApp = new Vue({
           entry.dateCollected = Date.parse(entry.dataCollectedDate);
           entry.output = Number(entry.output);
           entry.heatRate = Number(entry.heatRate);
+          entry.compressorEfficiency = Number(entry.compressorEfficiency);
         }
       )
     },
@@ -147,60 +148,60 @@ var kpiApp = new Vue({
             }]
         });
     },
-    // buildOutputChart() {
-    //   Highcharts.chart('compressorEfficiencyChart', {
-    //         chart: {
-    //             zoomType: 'x'
-    //         },
-    //         title: {
-    //             text: 'Compressor Efficiency'
-    //         },
-    //         xAxis: {
-    //             type: 'datetime'
-    //         },
-    //         yAxis: {
-    //             title: {
-    //                 text: 'Compressor Efficiency'
-    //             }
-    //         },
-    //         legend: {
-    //             enabled: false
-    //         },
-    //         plotOptions: {
-    //             area: {
-    //                 fillColor: {
-    //                     linearGradient: {
-    //                         x1: 0,
-    //                         y1: 0,
-    //                         x2: 0,
-    //                         y2: 1
-    //                     },
-    //                     stops: [
-    //                         [0, Highcharts.getOptions().colors[0]],
-    //                         [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
-    //                     ]
-    //                 },
-    //                 marker: {
-    //                     radius: 2
-    //                 },
-    //                 lineWidth: 1,
-    //                 states: {
-    //                     hover: {
-    //                         lineWidth: 1
-    //                     }
-    //                 },
-    //                 threshold: null
-    //             }
-    //         },
-    //         series: [{
-    //             type: 'area',
-    //             name: 'Trips',
-    //             data: kpiApp.sensorTime.map( entry=>
-    //               [entry.dateCollected, entry.output]
-    //             )
-    //         }]
-    //     });
-    // },
+    buildCompressorEfficiencyChart() {
+      Highcharts.chart('compressorEfficiencyChart', {
+            chart: {
+                zoomType: 'x'
+            },
+            title: {
+                text: 'Compressor Efficiency'
+            },
+            xAxis: {
+                type: 'datetime'
+            },
+            yAxis: {
+                title: {
+                    text: 'Compressor Efficiency'
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            plotOptions: {
+                area: {
+                    fillColor: {
+                        linearGradient: {
+                            x1: 0,
+                            y1: 0,
+                            x2: 0,
+                            y2: 1
+                        },
+                        stops: [
+                            [0, Highcharts.getOptions().colors[0]],
+                            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                        ]
+                    },
+                    marker: {
+                        radius: 2
+                    },
+                    lineWidth: 1,
+                    states: {
+                        hover: {
+                            lineWidth: 1
+                        }
+                    },
+                    threshold: null
+                }
+            },
+            series: [{
+                type: 'area',
+                name: 'Compressor Efficiency',
+                data: kpiApp.sensorTime.map( entry=>
+                  [entry.dateCollected, entry.compressorEfficiency]
+                )
+            }]
+        });
+    },
   },
   created () {
     this.fetchTurbines();
