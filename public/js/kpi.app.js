@@ -83,8 +83,8 @@ var kpiApp = new Vue({
                             y2: 1
                         },
                         stops: [
-                            [0, Highcharts.getOptions().colors[0]],
-                            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                            [0, "#2d9d47"],
+                            [1, "#006440"]
                         ]
                     },
                     marker: {
@@ -162,6 +162,7 @@ var kpiApp = new Vue({
         },
         series: [{
             name: 'Heat Rate',
+            color: 'rgba(223, 83, 83, .5)',
             data: kpiApp.sensorTime.map( entry=>
               [entry.output, entry.heatRate]
             )
