@@ -414,8 +414,8 @@ var kpiApp = new Vue({
                             y2: 1
                         },
                         stops: [
-                            [0, Highcharts.getOptions().colors[0]],
-                            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                            [0, '#79bd8f'],
+                            [1, '#c3c2f2']
                         ]
                     },
                     marker: {
