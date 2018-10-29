@@ -127,7 +127,7 @@ var kpiApp = new Vue({
         },
         yAxis: {
             title: {
-                text: 'Weight (kg)'
+                text: 'Heat Rate'
             }
         },
         legend: {
@@ -509,6 +509,5 @@ var kpiApp = new Vue({
   },
   created () {
     this.fetchTurbines();
-  //  this.fetchSensorTimeSeries(turbineId);
   }
 })
