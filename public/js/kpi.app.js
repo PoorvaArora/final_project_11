@@ -46,7 +46,7 @@ var kpiApp = new Vue({
           entry.compressorEfficiency = Number(entry.compressorEfficiency);
           entry.availability = Number(entry.availability);
           entry.reliability = Number(entry.reliability);
-          entry.fixedHour = Number(entry.fixedHour);
+          entry.fixedHours = Number(entry.fixedHours);
         }
       )
     },
@@ -372,7 +372,7 @@ var kpiApp = new Vue({
         });
     },
     buildFixedHourChart() {
-      Highcharts.chart('fixedHourChart', {
+      Highcharts.chart('fixedHoursChart', {
             chart: {
                 zoomType: 'x'
             },
@@ -420,7 +420,7 @@ var kpiApp = new Vue({
                 type: 'area',
                 name: 'Fixed Hour',
                 data: kpiApp.sensorTime.map( entry=>
-                  [entry.dateCollected, entry.fixedHour]
+                  [entry.dateCollected, entry.fixedHours]
                 )
             }]
         });
