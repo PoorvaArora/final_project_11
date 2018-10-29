@@ -29,6 +29,7 @@ var kpiApp = new Vue({
         kpiApp.buildCompressorEfficiencyChart();
         kpiApp.buildAvailabilityChart();
         kpiApp.buildReliabilityChart();
+        kpiApp.buildFixedHourChart();
     //  console.log(agsApp.sensors);
     })
       .catch( err => {
@@ -45,6 +46,7 @@ var kpiApp = new Vue({
           entry.compressorEfficiency = Number(entry.compressorEfficiency);
           entry.availability = Number(entry.availability);
           entry.reliability = Number(entry.reliability);
+          entry.fixedHour = Number(entry.fixedHour);
         }
       )
     },
@@ -311,6 +313,114 @@ var kpiApp = new Vue({
                 name: 'Reliability',
                 data: kpiApp.sensorTime.map( entry=>
                   [entry.dateCollected, entry.reliability]
+                )
+            }]
+        });
+    },
+    buildReliabilityChart() {
+      Highcharts.chart('reliabilityChart', {
+            chart: {
+                zoomType: 'x'
+            },
+            title: {
+                text: 'Reliability'
+            },
+            xAxis: {
+                type: 'datetime'
+            },
+            yAxis: {
+                title: {
+                    text: 'Reliability'
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            plotOptions: {
+                area: {
+                    fillColor: {
+                        linearGradient: {
+                            x1: 0,
+                            y1: 0,
+                            x2: 0,
+                            y2: 1
+                        },
+                        stops: [
+                            [0, Highcharts.getOptions().colors[0]],
+                            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                        ]
+                    },
+                    marker: {
+                        radius: 2
+                    },
+                    lineWidth: 1,
+                    states: {
+                        hover: {
+                            lineWidth: 1
+                        }
+                    },
+                    threshold: null
+                }
+            },
+            series: [{
+                type: 'area',
+                name: 'Reliability',
+                data: kpiApp.sensorTime.map( entry=>
+                  [entry.dateCollected, entry.reliability]
+                )
+            }]
+        });
+    },
+    buildFixedHourChart() {
+      Highcharts.chart('fixedHourChart', {
+            chart: {
+                zoomType: 'x'
+            },
+            title: {
+                text: 'Fixed Hour'
+            },
+            xAxis: {
+                type: 'datetime'
+            },
+            yAxis: {
+                title: {
+                    text: 'Fixed Hour'
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            plotOptions: {
+                area: {
+                    fillColor: {
+                        linearGradient: {
+                            x1: 0,
+                            y1: 0,
+                            x2: 0,
+                            y2: 1
+                        },
+                        stops: [
+                            [0, Highcharts.getOptions().colors[0]],
+                            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                        ]
+                    },
+                    marker: {
+                        radius: 2
+                    },
+                    lineWidth: 1,
+                    states: {
+                        hover: {
+                            lineWidth: 1
+                        }
+                    },
+                    threshold: null
+                }
+            },
+            series: [{
+                type: 'area',
+                name: 'Fixed Hour',
+                data: kpiApp.sensorTime.map( entry=>
+                  [entry.dateCollected, entry.fixedHour]
                 )
             }]
         });
