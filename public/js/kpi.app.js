@@ -30,6 +30,8 @@ var kpiApp = new Vue({
         kpiApp.buildAvailabilityChart();
         kpiApp.buildReliabilityChart();
         kpiApp.buildFixedHourChart();
+        kpiApp.buildTripsChart();
+        kpiApp.buildStartsChart();
     //  console.log(agsApp.sensors);
     })
       .catch( err => {
@@ -47,6 +49,8 @@ var kpiApp = new Vue({
           entry.availability = Number(entry.availability);
           entry.reliability = Number(entry.reliability);
           entry.fixedHours = Number(entry.firedHours);
+          entry.trips = Number(entry.trips);
+          entry.starts = Number(entry.starts);
         }
       )
     },
@@ -425,6 +429,74 @@ var kpiApp = new Vue({
             }]
         });
     },
+    buildTripsChart() {
+      Highcharts.chart('tripsChart', {
+            chart: {
+                zoomType: 'x'
+            },
+            title: {
+                text: 'Trips'
+            },
+            xAxis: {
+                type: 'datetime'
+            },
+            yAxis: {
+                title: {
+                    text: 'Trips'
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            plotOptions: {
+              column: {
+               pointPadding: 0.2,
+               borderWidth: 0
+           }
+            },
+            series: [{
+                type: 'area',
+                name: 'Trips',
+                data: kpiApp.sensorTime.map( entry=>
+                  [entry.dateCollected, entry.trips]
+                )
+            }]
+        });
+    },
+    buildStartsChart() {
+      Highcharts.chart('startsChart', {
+            chart: {
+                zoomType: 'x'
+            },
+            title: {
+                text: 'Starts'
+            },
+            xAxis: {
+                type: 'datetime'
+            },
+            yAxis: {
+                title: {
+                    text: 'Starts'
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            plotOptions: {
+              column: {
+               pointPadding: 0.2,
+               borderWidth: 0
+           }
+            },
+            series: [{
+                type: 'area',
+                name: 'Starts',
+                data: kpiApp.sensorTime.map( entry=>
+                  [entry.dateCollected, entry.starts]
+                )
+            }]
+        });
+    }
   },
   created () {
     this.fetchTurbines();
