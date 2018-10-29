@@ -22,7 +22,7 @@ class sensorTimeSeries
     $this->availability = $data['availability'];
     $this->compressorEfficiency = $data['compressorEfficiency'];
     $this->reliability = $data['reliability'];
-    $this->firedHours = $data['compressorEfficiency'];
+    $this->firedHours = $data['firedHours'];
     $this->trips = $data['trips'];
     $this->starts= $data['starts'];
 
