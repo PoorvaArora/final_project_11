@@ -110,54 +110,63 @@ var kpiApp = new Vue({
     },
     buildHeatRateChart() {
       Highcharts.chart('heatRateChart', {
-            chart: {
-                zoomType: 'x'
-            },
+        chart: {
+            type: 'scatter',
+            zoomType: 'xy'
+        },
+        title: {
+            text: 'Heat Rate'
+        },
+        xAxis: {
             title: {
-                text: 'Heat Rate'
+                enabled: true
             },
-            // xAxis: {
-            //     type: 'datetime'
-            // },
-            yAxis: {
-                title: {
-                    text: 'Heat Rate'
+            startOnTick: true,
+            endOnTick: true,
+            showLastLabel: true
+        },
+        yAxis: {
+            title: {
+                text: 'Weight (kg)'
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'left',
+            verticalAlign: 'top',
+            x: 100,
+            y: 70,
+            floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF',
+            borderWidth: 1
+        },
+        plotOptions: {
+            scatter: {
+                marker: {
+                    radius: 5,
+                    states: {
+                        hover: {
+                            enabled: true,
+                            lineColor: 'rgb(100,100,100)'
+                        }
+                    }
+                },
+                states: {
+                    hover: {
+                        marker: {
+                            enabled: false
+                        }
+                    }
                 }
-            },
-            legend: {
-              layout: 'vertical',
-               align: 'right',
-               verticalAlign: 'middle'
-            },
-            plotOptions: {
-              series: {
-             label: {
-                 connectorAllowed: false
-             },
-     }
-            },
-            responsive: {
-              rules: [{
-           condition: {
-               maxWidth: 500
-           },
-           chartOptions: {
-               legend: {
-                   layout: 'horizontal',
-                   align: 'center',
-                   verticalAlign: 'bottom'
-               }
-           }
-       }]
-   },
-            series: [{
-                type: 'line',
-                name: 'Heat Rate',
-                data: kpiApp.sensorTime.map( entry=>
-                  [entry.output, entry.heatRate]
-                )
-            }]
-        });
+            }
+        },
+        series: [{
+            name: 'Heat Rate',
+            data: kpiApp.sensorTime.map( entry=>
+              [entry.output, entry.heatRate]
+            )
+        }]
+    });
     },
     buildCompressorEfficiencyChart() {
       Highcharts.chart('compressorEfficiencyChart', {
