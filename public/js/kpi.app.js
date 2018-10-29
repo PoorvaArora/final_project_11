@@ -420,7 +420,7 @@ var kpiApp = new Vue({
                 type: 'area',
                 name: 'Fixed Hour',
                 data: kpiApp.sensorTime.map( entry=>
-                  [entry.dateCollected, entry.firedHours]
+                  [entry.dateCollected, entry.fixedHours]
                 )
             }]
         });
