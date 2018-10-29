@@ -46,7 +46,7 @@ var kpiApp = new Vue({
           entry.compressorEfficiency = Number(entry.compressorEfficiency);
           entry.availability = Number(entry.availability);
           entry.reliability = Number(entry.reliability);
-          entry.fixedHours = Number(entry.fixedHours);
+          entry.fixedHours = Number(entry.firedHours);
         }
       )
     },
