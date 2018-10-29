@@ -198,8 +198,8 @@ var kpiApp = new Vue({
                             y2: 1
                         },
                         stops: [
-                            [0, Highcharts.getOptions().colors[0]],
-                            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                            [0, '#6c5b7b'],
+                            [1, '#c06c84']
                         ]
                     },
                     marker: {
@@ -252,8 +252,8 @@ var kpiApp = new Vue({
                             y2: 1
                         },
                         stops: [
-                            [0, Highcharts.getOptions().colors[0]],
-                            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                            [0, '#c06c84'],
+                            [1, '#f67280']
                         ]
                     },
                     marker: {
