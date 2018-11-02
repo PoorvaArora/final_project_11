@@ -16,7 +16,7 @@ if($turbineId < 1){
   echo $json;
 }
 else {
-$sensorTimeSeriesByTurbineId = SensorTimeSeries::fetchTimeSeriesByTurbineId($turbineId);
+$sensorTimeSeriesByTurbineId = SensorTimeSeries::fetchTimeSeriesByTurbineId($turbineId, $sensorId);
 
 // 2. Convert to JSON
 $json = json_encode($sensorTimeSeriesByTurbineId, JSON_PRETTY_PRINT);

@@ -19,8 +19,18 @@ var kpiApp = new Vue({
         console.log(err);
       })
     },
-    fetchSensorTimeSeries (turbineId) {
-      fetch('api/sensorTimeSeries.php?turbineId='+turbineId)
+    fetchSensors () {
+      fetch('api/sensor.php')
+      .then( response => response.json() )
+      // ^ This is the same as .then( function(response) {return response.json()} )
+      .then( json => {kpiApp.sensor = json})
+      .catch( err => {
+        console.log('TASK FETCH ERROR:');
+        console.log(err);
+      })
+    },
+    fetchSensorTimeSeries () {
+      fetch('api/sensorTimeSeries.php?turbineId='+turbineId&'sensorId='+sensorId)
       .then( response => response.json() )
       // ^ This is the same as .then( function(response) {return response.json()} )
       .then( json => {
@@ -524,5 +534,6 @@ var kpiApp = new Vue({
   },
   created () {
     this.fetchTurbines();
+    this.fetchSensors();
   }
 })

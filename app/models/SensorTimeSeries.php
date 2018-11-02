@@ -49,19 +49,20 @@ class sensorTimeSeries
     return $arr;
   }
 
-  public static function fetchTimeSeriesByTurbineId(int $turbineId) {
+  public static function fetchTimeSeriesByTurbineId(int $turbineId, int $sensorId) {
     // 1. Connect to the database
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
     // 2. Prepare the query
-    $sql = 'SELECT * from sensorTimeSeries sts inner join sensorDeployed sd on sts.sensorDeployedId = sd.sensorDeployedId inner join turbineDeployed td on sd.turbineDeployedId = td.turbineDeployedId where turbineId = ?';
+    $sql = 'SELECT * from sensorTimeSeries sts inner join sensorDeployed sd on sts.sensorDeployedId = sd.sensorDeployedId inner join turbineDeployed td on sd.turbineDeployedId = td.turbineDeployedId where turbineId = ? and sensorId= ?';
     //$sql = 'SELECT * FROM note WHERE clientId = ?';
 
     $statement = $db->prepare($sql);
 
     // 3. Run the query
     $success = $statement->execute(
-        [$turbineId]
+        [$turbineId],
+        [$sensorId]
     );
 
     // 4. Handle the results
