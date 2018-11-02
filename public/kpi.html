@@ -56,7 +56,7 @@
       <label for="country" class="col-md-2 col-form-label">Select Sensor</label>
     <div class="col-md-1">
     <select v-model="sensorDeployedId" v-on:change="fetchSensorTimeSeries(sensorDeployedId)">
-      <option v-for="sensorDep in sensorsDeployed" v-bind:value="sensor.sensorDeployedId">
+      <option v-for="sensorDep in sensorsDeployed" v-bind:value="sensorDep.sensorDeployedId">
         {{sensorDep.sensorDeployedId}}
       </option>
     </select>
