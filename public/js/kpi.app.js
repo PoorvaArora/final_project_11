@@ -5,6 +5,7 @@ var kpiApp = new Vue({
     turbines:[],
     sensorsDeployed:[],
     turbineId: null,
+    sensorDeployedId: null,
     newTurbineHealthForm: ''
   },
   computed: {
