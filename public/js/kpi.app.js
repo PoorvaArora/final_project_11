@@ -3,6 +3,7 @@ var kpiApp = new Vue({
   data: {
     sensorTime:[],
     turbines:[],
+    sensors:[],
     turbineId: null,
     newTurbineHealthForm: ''
   },
@@ -23,7 +24,7 @@ var kpiApp = new Vue({
       fetch('api/sensor.php')
       .then( response => response.json() )
       // ^ This is the same as .then( function(response) {return response.json()} )
-      .then( json => {kpiApp.sensor = json})
+      .then( json => {kpiApp.sensors = json})
       .catch( err => {
         console.log('TASK FETCH ERROR:');
         console.log(err);
