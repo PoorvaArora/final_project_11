@@ -2,7 +2,8 @@ var kpiApp = new Vue({
   el: '#agsKPI',
   data: {
     sensorTime:[],
-    turbines:[]
+    turbines:[],
+    turbineId: null
   },
   computed: {
   },
@@ -462,7 +463,19 @@ var kpiApp = new Vue({
               column: {
                pointPadding: 0.2,
                borderWidth: 0
-           }
+           },
+           fillColor: {
+               linearGradient: {
+                   x1: 0,
+                   y1: 0,
+                   x2: 0,
+                   y2: 1
+               },
+               stops: [
+                   [0, '#79bd8f'],
+                   [1, '#c3c2f2']
+               ]
+           },
             },
             series: [{
                 type: 'area',
