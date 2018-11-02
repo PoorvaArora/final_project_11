@@ -46,16 +46,16 @@
   <div class="form-group row">
     <label for="country" class="col-md-2 col-form-label">Select Turbine</label>
       <div class="col-md-1">
-      <select v-model="turbineId">
+      <select v-model="turbineId" v-on:change="fetchSensorTimeSeries(turbineId)">
         <option v-for="turbine in turbines" v-bind:value="turbine.turbineId">
           {{turbine.turbineId}}
         </option>
       </select>
     </div>
     <div class="col-md-1">
-    <select v-model="sensorId">
-      <option v-for="sensor in sensors" v-bind:value="sensor.sensorId">
-        {{sensor.sensorId}}
+    <select v-model="sensorDeployedId" v-on:change="fetchSensorTimeSeries(sensorDeployedId)">
+      <option v-for="sensorDep in sensorsDeployed" v-bind:value="sensor.sensorDeployedId">
+        {{sensorDep.sensorDeployedId}}
       </option>
     </select>
   </div>

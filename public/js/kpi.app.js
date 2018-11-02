@@ -20,8 +20,8 @@ var kpiApp = new Vue({
         console.log(err);
       })
     },
-    fetchSensors () {
-      fetch('api/sensor.php')
+    fetchSensorsDeployed(turbineId) {
+      fetch('api/sensorDeployed.php?turbineId='+turbineId)
       .then( response => response.json() )
       // ^ This is the same as .then( function(response) {return response.json()} )
       .then( json => {kpiApp.sensors = json})
@@ -30,8 +30,8 @@ var kpiApp = new Vue({
         console.log(err);
       })
     },
-    fetchSensorTimeSeries (turbineId,sensorId) {
-      fetch('api/sensorTimeSeries.php?turbineId='+turbineId+'&sensorId='+sensorId)
+    fetchSensorTimeSeries(sensorDeployedId) {
+      fetch('api/sensorTimeSeries.php?sensorDeployedId='+sensorDeployedId)
       .then( response => response.json() )
       // ^ This is the same as .then( function(response) {return response.json()} )
       .then( json => {
@@ -535,6 +535,5 @@ var kpiApp = new Vue({
   },
   created () {
     this.fetchTurbines();
-    this.fetchSensors();
   }
 })

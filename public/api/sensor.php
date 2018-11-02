@@ -2,11 +2,6 @@
 
 require '../../app/common.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  require 'sensorPOST.php';
-  exit;
-}
-
 // 1. Go to the database and get all client
 $sensor = Sensor::fetchAll();
 
