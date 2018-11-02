@@ -54,7 +54,7 @@ class sensorTimeSeries
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
     // 2. Prepare the query
-    $sql = 'SELECT * from sensorTimeSeries sts inner join sensorDeployed sd on sts.sensorDeployedId = sd.sensorDeployedId inner join turbineDeployed td on sd.turbineDeployedId = td.turbineDeployedId where sensorDeployedId = ?';
+    $sql = 'SELECT * from sensorTimeSeries where sensorDeployedId = ?';
     //$sql = 'SELECT * FROM note WHERE clientId = ?';
 
     $statement = $db->prepare($sql);
