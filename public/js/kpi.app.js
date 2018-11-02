@@ -31,7 +31,7 @@ var kpiApp = new Vue({
       })
     },
     fetchSensorTimeSeries (turbineId,sensorId) {
-      fetch('api/sensorTimeSeries.php?turbineId='+turbineId&'sensorId='+sensorId)
+      fetch('api/sensorTimeSeries.php?turbineId='+turbineId+'&sensorId='+sensorId)
       .then( response => response.json() )
       // ^ This is the same as .then( function(response) {return response.json()} )
       .then( json => {
