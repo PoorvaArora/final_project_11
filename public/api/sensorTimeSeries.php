@@ -3,6 +3,7 @@
 require '../../app/common.php';
 
 $turbineId = intval($_GET['turbineId'] ?? 0);
+$sensorId = intval($_GET['sensorId'] ?? 0);
 
 if($turbineId < 1){
   // 1. Go to the database and get all client
