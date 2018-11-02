@@ -4,7 +4,7 @@ require '../../app/common.php';
 
 $sensorDeployedId = intval($_GET['sensorDeployedId'] ?? 0);
 
-if($turbineId < 1){
+if($sensorDeployedId < 1){
   // 1. Go to the database and get all client
   $sensorTimeSeries = SensorTimeSeries::fetchAll();
 
